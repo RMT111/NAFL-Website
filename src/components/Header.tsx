@@ -34,7 +34,7 @@ export default function Header() {
             width={2242}
             height={624}
             priority
-            style={{ height: 84, width: "auto" }}
+            style={{ width: "auto" }}
           />
         </a>
         <nav className={`navlinks${open ? " open" : ""}`} id="navlinks">
