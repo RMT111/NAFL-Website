@@ -1,0 +1,32 @@
+{
+  "companyName": "Northern Access Floors Ltd",
+  "phone": "01482 483950",
+  "phoneHref": "tel:01482483950",
+  "fax": "01482 483951",
+  "email": "info@nafl.co.uk",
+  "emailHref": "mailto:info@nafl.co.uk",
+  "address": {
+    "line1": "Northern Access Floors Ltd",
+    "line2": "Unit 5a, Marfleet Environmental Technology Park,",
+    "line3": "Westgate Way, Hull HU9 5LW"
+  },
+  "badgeText": "Approved Tate Access Floors Agent",
+  "logo": "/logo.png",
+  "logoAlt": "Northern Access Floors Ltd",
+  "footerLogo": "/logo.jpg",
+  "footerDescription": "Leading specialists in new and existing raised access flooring across Northern England and the Midlands. Approved Tate agent with over 20 years' experience.",
+  "navigation": [
+    { "href": "#what", "label": "Raised Access Flooring" },
+    { "href": "#why", "label": "Why Us" },
+    { "href": "#services", "label": "Services" },
+    { "href": "#comms", "label": "Data Centres" },
+    { "href": "#contact", "label": "Contact" }
+  ],
+  "footerNav": [
+    { "href": "#what", "label": "Raised Access Flooring" },
+    { "href": "#why", "label": "Why Choose Us" },
+    { "href": "#services", "label": "Services" },
+    { "href": "#comms", "label": "Data Centres" },
+    { "href": "#contact", "label": "Request a Quote" }
+  ]
+}

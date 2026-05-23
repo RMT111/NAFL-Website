@@ -1,0 +1,15 @@
+{
+  "eyebrow": "What is raised access flooring?",
+  "heading": "An elevated floor with room to work underneath",
+  "paragraphs": [
+    "A raised access floor is an elevated floor area built above another floor — typically a concrete slab. It comprises load-bearing floor panels laid in a horizontal grid, supported by adjustable vertical pedestals.",
+    "This creates an underfloor void to cost-effectively house and distribute your building services. Panels are readily removable, so access to everything beneath is fast and easy."
+  ],
+  "uses": [
+    { "icon": "bolt", "label": "Electric power" },
+    { "icon": "server", "label": "Data & telecoms" },
+    { "icon": "air", "label": "Air conditioning" },
+    { "icon": "fire", "label": "Fire & security" }
+  ],
+  "diagramCaption": "Cross-section: load-bearing panels on adjustable pedestals over the structural slab."
+}

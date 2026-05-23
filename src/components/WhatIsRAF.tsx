@@ -1,4 +1,15 @@
 import { BoltIcon, ServerIcon, AirIcon, FireIcon } from "./icons";
+import type { AboutContent } from "../types/content";
+import about from "../../content/about.json";
+
+const a: AboutContent = about;
+
+const iconMap: Record<string, React.FC> = {
+  bolt: BoltIcon,
+  server: ServerIcon,
+  air: AirIcon,
+  fire: FireIcon,
+};
 
 export default function WhatIsRAF() {
   return (
@@ -6,7 +17,7 @@ export default function WhatIsRAF() {
       <div className="wrap">
         <div className="raf-grid">
           <div className="raf-text reveal">
-            <span className="eyebrow">What is raised access flooring?</span>
+            <span className="eyebrow">{a.eyebrow}</span>
             <h2
               style={{
                 fontSize: "clamp(1.9rem,3.3vw,2.6rem)",
@@ -15,32 +26,20 @@ export default function WhatIsRAF() {
                 margin: "16px 0 18px",
               }}
             >
-              An elevated floor with room to work underneath
+              {a.heading}
             </h2>
-            <p>
-              A raised access floor is an elevated floor area built above another
-              floor — typically a concrete slab. It comprises load-bearing floor
-              panels laid in a horizontal grid, supported by adjustable vertical
-              pedestals.
-            </p>
-            <p>
-              This creates an underfloor void to cost-effectively house and
-              distribute your building services. Panels are readily removable, so
-              access to everything beneath is fast and easy.
-            </p>
+            {a.paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
             <div className="uses">
-              <div className="use">
-                <BoltIcon /> Electric power
-              </div>
-              <div className="use">
-                <ServerIcon /> Data &amp; telecoms
-              </div>
-              <div className="use">
-                <AirIcon /> Air conditioning
-              </div>
-              <div className="use">
-                <FireIcon /> Fire &amp; security
-              </div>
+              {a.uses.map((use) => {
+                const Icon = iconMap[use.icon];
+                return (
+                  <div className="use" key={use.label}>
+                    {Icon && <Icon />} {use.label}
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div className="diagram reveal">
@@ -143,10 +142,7 @@ export default function WhatIsRAF() {
                 REMOVABLE FLOOR PANELS
               </text>
             </svg>
-            <p className="cap">
-              Cross-section: load-bearing panels on adjustable pedestals over the
-              structural slab.
-            </p>
+            <p className="cap">{a.diagramCaption}</p>
           </div>
         </div>
       </div>

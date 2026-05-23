@@ -1,5 +1,11 @@
 import { PhoneIcon, MailIcon, PinDotIcon, CalendarIcon } from "./icons";
 import QuoteForm from "./QuoteForm";
+import type { SiteContent, ContactContent } from "../types/content";
+import site from "../../content/site.json";
+import contact from "../../content/contact.json";
+
+const s: SiteContent = site;
+const ct: ContactContent = contact;
 
 export default function Contact() {
   return (
@@ -7,13 +13,9 @@ export default function Contact() {
       <div className="wrap">
         <div className="contact-grid">
           <div className="contact-info reveal">
-            <span className="eyebrow">Get in touch</span>
-            <h2>Request a free quote</h2>
-            <p className="intro">
-              Fill in the form and we&apos;ll get back to you, or reach us
-              directly using the details below. From initial enquiry to
-              completion, we&apos;re on hand to help.
-            </p>
+            <span className="eyebrow">{ct.eyebrow}</span>
+            <h2>{ct.heading}</h2>
+            <p className="intro">{ct.introText}</p>
 
             <div className="ci-item">
               <div className="ico">
@@ -21,8 +23,8 @@ export default function Contact() {
               </div>
               <div>
                 <div className="lbl">Telephone</div>
-                <a className="val" href="tel:01482483950">
-                  01482 483950
+                <a className="val" href={s.phoneHref}>
+                  {s.phone}
                 </a>
               </div>
             </div>
@@ -32,8 +34,8 @@ export default function Contact() {
               </div>
               <div>
                 <div className="lbl">Email</div>
-                <a className="val" href="mailto:info@nafl.co.uk">
-                  info@nafl.co.uk
+                <a className="val" href={s.emailHref}>
+                  {s.email}
                 </a>
               </div>
             </div>
@@ -44,11 +46,11 @@ export default function Contact() {
               <div>
                 <div className="lbl">Address</div>
                 <address>
-                  Northern Access Floors Ltd
+                  {s.address.line1}
                   <br />
-                  Unit 5a, Marfleet Environmental Technology Park,
+                  {s.address.line2}
                   <br />
-                  Westgate Way, Hull HU9 5LW
+                  {s.address.line3}
                 </address>
               </div>
             </div>
@@ -59,7 +61,7 @@ export default function Contact() {
               <div>
                 <div className="lbl">Fax</div>
                 <div className="val" style={{ fontWeight: 600 }}>
-                  01482 483951
+                  {s.fax}
                 </div>
               </div>
             </div>

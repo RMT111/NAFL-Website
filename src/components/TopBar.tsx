@@ -1,23 +1,27 @@
 import { PhoneIcon, MailIcon } from "./icons";
+import type { SiteContent } from "../types/content";
+import site from "../../content/site.json";
+
+const s: SiteContent = site;
 
 export default function TopBar() {
   return (
     <div className="topbar">
       <div className="wrap">
         <div className="tb-left">
-          <a href="tel:01482483950" className="tb-item">
+          <a href={s.phoneHref} className="tb-item">
             <PhoneIcon />
-            01482 483950
+            {s.phone}
           </a>
-          <a href="mailto:info@nafl.co.uk" className="tb-item">
+          <a href={s.emailHref} className="tb-item">
             <MailIcon />
-            info@nafl.co.uk
+            {s.email}
           </a>
-          <span className="tb-item fax">Fax: 01482 483951</span>
+          <span className="tb-item fax">Fax: {s.fax}</span>
         </div>
         <div className="tb-badge">
           <span className="dot" />
-          Approved Tate Access Floors Agent
+          {s.badgeText}
         </div>
       </div>
     </div>

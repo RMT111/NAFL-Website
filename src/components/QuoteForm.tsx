@@ -2,6 +2,12 @@
 
 import { useRef, useState } from "react";
 import { SendIcon } from "./icons";
+import type { ContactContent, SiteContent } from "../types/content";
+import contact from "../../content/contact.json";
+import site from "../../content/site.json";
+
+const ct: ContactContent = contact;
+const s: SiteContent = site;
 
 export default function QuoteForm() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -37,7 +43,9 @@ export default function QuoteForm() {
       "Quote request - " + v("name") + (v("company") ? " (" + v("company") + ")" : "");
 
     window.location.href =
-      "mailto:info@nafl.co.uk?subject=" +
+      "mailto:" +
+      s.email +
+      "?subject=" +
       encodeURIComponent(subject) +
       "&body=" +
       encodeURIComponent(lines);
@@ -47,14 +55,13 @@ export default function QuoteForm() {
 
   return (
     <div className="quote-form reveal">
-      <h3>Tell us about your project</h3>
+      <h3>{ct.formHeading}</h3>
       <p className="fsub">
         Fields marked <span style={{ color: "var(--blue)" }}>*</span> are
         required. We aim to respond the same working day.
       </p>
       <div className={`form-msg${showMsg ? " show" : ""}`} id="formMsg">
-        Thanks — your email app should now be open with your enquiry ready to
-        send. If it didn&apos;t open, please call us on 01482 483950.
+        {ct.formSuccessMessage.replace("{phone}", s.phone)}
       </div>
       <form ref={formRef} id="quoteForm" noValidate onSubmit={handleSubmit}>
         <div className="form-row">
@@ -92,13 +99,9 @@ export default function QuoteForm() {
             <label htmlFor="service">Type of work</label>
             <select id="service" name="service" defaultValue="">
               <option value="">Please select…</option>
-              <option>New raised access flooring</option>
-              <option>Data centre / server room floor</option>
-              <option>Removal or replacement</option>
-              <option>Strengthening works</option>
-              <option>Alterations / floor boxes</option>
-              <option>Ramps, steps &amp; handrails</option>
-              <option>Other / not sure</option>
+              {ct.serviceOptions.map((opt) => (
+                <option key={opt}>{opt}</option>
+              ))}
             </select>
           </div>
         </div>
@@ -114,15 +117,15 @@ export default function QuoteForm() {
           />
         </div>
         <button type="submit" className="btn btn-primary">
-          Send Enquiry
+          {ct.submitButton}
           <SendIcon />
         </button>
         <p className="form-note">
-          Prefer to talk? Call{" "}
-          <a href="tel:01482483950" style={{ color: "var(--blue)", fontWeight: 700 }}>
-            01482 483950
-          </a>{" "}
-          and speak to the team.
+          {ct.formNote.split("{phone}")[0]}
+          <a href={s.phoneHref} style={{ color: "var(--blue)", fontWeight: 700 }}>
+            {s.phone}
+          </a>
+          {ct.formNote.split("{phone}")[1]}
         </p>
       </form>
     </div>

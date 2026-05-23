@@ -2,14 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import type { SiteContent } from "../types/content";
+import site from "../../content/site.json";
 
-const links = [
-  { href: "#what", label: "Raised Access Flooring" },
-  { href: "#why", label: "Why Us" },
-  { href: "#services", label: "Services" },
-  { href: "#comms", label: "Data Centres" },
-  { href: "#contact", label: "Contact" },
-];
+const s: SiteContent = site;
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,10 +23,9 @@ export default function Header() {
     <header ref={navRef} className={`nav${scrolled ? " scrolled" : ""}`} id="nav">
       <div className="wrap">
         <a href="#top" className="brand">
-          {/* Logo extracted from the original inline base64 into /public/logo.jpg */}
           <Image
-            src="/logo.png"
-            alt="Northern Access Floors Ltd"
+            src={s.logo}
+            alt={s.logoAlt}
             width={2242}
             height={624}
             priority
@@ -38,7 +33,7 @@ export default function Header() {
           />
         </a>
         <nav className={`navlinks${open ? " open" : ""}`} id="navlinks">
-          {links.map((l) => (
+          {s.navigation.map((l) => (
             <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
               {l.label}
             </a>

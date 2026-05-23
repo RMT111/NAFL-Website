@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Get in touch",
+  "heading": "Request a free quote",
+  "introText": "Fill in the form and we'll get back to you, or reach us directly using the details below. From initial enquiry to completion, we're on hand to help.",
+  "formHeading": "Tell us about your project",
+  "formSubheading": "Fields marked * are required. We aim to respond the same working day.",
+  "formSuccessMessage": "Thanks — your email app should now be open with your enquiry ready to send. If it didn't open, please call us on {phone}.",
+  "formNote": "Prefer to talk? Call {phone} and speak to the team.",
+  "submitButton": "Send Enquiry",
+  "serviceOptions": [
+    "New raised access flooring",
+    "Data centre / server room floor",
+    "Removal or replacement",
+    "Strengthening works",
+    "Alterations / floor boxes",
+    "Ramps, steps & handrails",
+    "Other / not sure"
+  ]
+}
