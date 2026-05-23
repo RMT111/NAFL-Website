@@ -1,0 +1,37 @@
+{
+  "eyebrow": "Our Services",
+  "heading": "A complete raised flooring service",
+  "description": "From consultancy and survey through to installation, alteration and strengthening — whatever the project, we can handle it.",
+  "services": [
+    {
+      "icon": "consult",
+      "title": "Consultancy & survey",
+      "description": "Expert advice plus full site inspection and survey services to specify the right system for your project."
+    },
+    {
+      "icon": "cad",
+      "title": "CAD setting-out drawings",
+      "description": "Production of detailed CAD setting-out drawings so every panel, cut-out and edge is planned before we start."
+    },
+    {
+      "icon": "install",
+      "title": "Supply & installation",
+      "description": "Supply and installation of all types of new raised access flooring, to PSA spec and BS EN 12825."
+    },
+    {
+      "icon": "wrench",
+      "title": "Removal & replacement",
+      "description": "Removal and/or replacement of existing raised floors, including strengthening works for heavier loads."
+    },
+    {
+      "icon": "chart",
+      "title": "Alterations & floor boxes",
+      "description": "Alterations following wall or partition changes, plus relocation, removal or addition of floor boxes."
+    },
+    {
+      "icon": "stairs",
+      "title": "Ramps, steps & handrails",
+      "description": "New ramps, steps and handrails to finish off and provide safe, compliant access to your raised floor."
+    }
+  ]
+}

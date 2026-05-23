@@ -1,12 +1,15 @@
-const brands = ["Hewetson", "Tate", "System Floors", "Durabella", "Torfloor"];
+import type { PartnersContent } from "../types/content";
+import partners from "../../content/partners.json";
+
+const p: PartnersContent = partners;
 
 export default function PartnerBand() {
   return (
     <div className="partner">
       <div className="wrap">
-        <span className="lbl">Full Tate portfolio supplied &amp; installed</span>
+        <span className="lbl">{p.heading}</span>
         <div className="brands">
-          {brands.map((b) => (
+          {p.brands.map((b) => (
             <span key={b} className="chip">
               {b}
             </span>

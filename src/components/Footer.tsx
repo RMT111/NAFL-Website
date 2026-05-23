@@ -1,4 +1,8 @@
 import Image from "next/image";
+import type { SiteContent } from "../types/content";
+import site from "../../content/site.json";
+
+const s: SiteContent = site;
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -10,46 +14,40 @@ export default function Footer() {
           <div className="foot-brand">
             <span className="logo-chip">
               <Image
-                src="/logo.jpg"
-                alt="Northern Access Floors Ltd"
+                src={s.footerLogo}
+                alt={s.logoAlt}
                 width={2242}
                 height={624}
                 style={{ height: 38, width: "auto" }}
               />
             </span>
-            <p>
-              Leading specialists in new and existing raised access flooring
-              across Northern England and the Midlands. Approved Tate agent with
-              over 20 years&apos; experience.
-            </p>
+            <p>{s.footerDescription}</p>
           </div>
           <div className="foot-col">
             <h4>Explore</h4>
-            <a href="#what">Raised Access Flooring</a>
-            <a href="#why">Why Choose Us</a>
-            <a href="#services">Services</a>
-            <a href="#comms">Data Centres</a>
-            <a href="#contact">Request a Quote</a>
+            {s.footerNav.map((link) => (
+              <a key={link.href} href={link.href}>
+                {link.label}
+              </a>
+            ))}
           </div>
           <div className="foot-col">
             <h4>Contact</h4>
-            <a href="tel:01482483950">Tel: 01482 483950</a>
-            <p>Fax: 01482 483951</p>
-            <a href="mailto:info@nafl.co.uk">info@nafl.co.uk</a>
+            <a href={s.phoneHref}>Tel: {s.phone}</a>
+            <p>Fax: {s.fax}</p>
+            <a href={s.emailHref}>{s.email}</a>
             <p>
-              Unit 5a, Marfleet Environmental
+              {s.address.line2}
               <br />
-              Technology Park, Westgate Way,
-              <br />
-              Hull HU9 5LW
+              {s.address.line3}
             </p>
           </div>
         </div>
         <div className="foot-bottom">
           <span>
-            © {year} Northern Access Floors Ltd. All rights reserved.
+            &copy; {year} {s.companyName}. All rights reserved.
           </span>
-          <span>Approved Tate Access Floors Agent</span>
+          <span>{s.badgeText}</span>
         </div>
       </div>
     </footer>

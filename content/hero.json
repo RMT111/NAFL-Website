@@ -1,0 +1,20 @@
+{
+  "eyebrow": "Raised Access Flooring Specialists",
+  "introText": "Leading specialists in new and existing raised access flooring across Northern England and the Midlands — backed by over 20 years of industry experience and the Tate product portfolio.",
+  "ctaPrimary": "Request a Free Quote",
+  "trustStats": [
+    { "value": "20+", "label": "Years' experience" },
+    { "value": "Tate", "label": "Approved agent" },
+    { "value": "CSCS", "label": "Certified installers" },
+    { "value": "24/7", "label": "Out-of-hours service" }
+  ],
+  "floorCard": {
+    "heading": "Built for what goes underneath",
+    "subheading": "Load-bearing panels on adjustable pedestals — fast access to every service.",
+    "features": [
+      "Power, data, voice & air conditioning",
+      "Removable panels for quick access",
+      "Anti-static vinyl, carpet or laminate finish"
+    ]
+  }
+}
